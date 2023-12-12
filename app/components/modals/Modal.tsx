@@ -148,6 +148,7 @@ const Modal: React.FC<ModalProps> = ({
                                         absolute
                                         left-9
                                     '
+                                    onClick={onClose}
                                 >
                                     <IoMdClose size={18} />
                                 </button>
