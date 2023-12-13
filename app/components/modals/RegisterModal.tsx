@@ -38,7 +38,7 @@ const RegisterModal = () => {
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true);
-
+        console.log(data);
         axios.post('/api/register', data)
         .then(() => {
             registerModal.onClose();
@@ -63,7 +63,32 @@ const RegisterModal = () => {
                 title='Welcome to Airbnb'
                 subtitle='Create an account!'
             />
-            <Input />
+            <Input 
+                id='email'
+                type='email'
+                label='Email'
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+            />
+            <Input 
+                id='name'
+                label='Name'
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+            />
+            <Input 
+                id='password'
+                type='password'
+                label='password'
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+            />
         </div>
     )
 
