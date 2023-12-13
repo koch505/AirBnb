@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: 'Airbnb clone',
 }
 
+import './i18n';
+
 export default function RootLayout({
   children,
 }: {
