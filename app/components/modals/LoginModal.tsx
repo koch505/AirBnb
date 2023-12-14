@@ -1,6 +1,6 @@
 'use client';
 
-import { signIn } from 'next-auth/react';
+import { signIn, singIn } from 'next-auth/react';
 
 import axios from 'axios';
 import { AiFillGithub } from 'react-icons/ai';
@@ -113,13 +113,13 @@ const LoginModal = () => {
                 outline
                 label='COntinue with Google'
                 Icon={FcGoogle}
-                onClick={() => {}}
+                onClick={() => singIn('google')}
             />
              <Button 
                 outline
                 label='COntinue with Github'
                 Icon={AiFillGithub}
-                onClick={() => {}}
+                onClick={() => signIn('github')}
             />
             <div
                 className='
