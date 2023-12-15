@@ -7,3 +7,13 @@ const formattedCounties = countries.map((country) => ({
     lating: country.latlng,
     region: country.region
 }));
+
+const useCounties = () => {
+    const getAll = () => formattedCounties;
+
+    const getByValue = (value: string) => {
+        return formattedCounties.find(item => item.value === value);
+    }
+}
+
+export default useCounties;
