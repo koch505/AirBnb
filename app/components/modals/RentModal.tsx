@@ -8,7 +8,7 @@ import { useMemo, useState } from 'react';
 import { FieldValues, useForm } from "react-hook-form";
 import CountrySelect from "../inputs/CountrySelect";
 import dynamic from "next/dynamic";
-import Counter from "../Counter";
+import Counter from "../inputs/Counter";
 
 enum STEPS {
     CATEGORY = 0,
@@ -48,6 +48,9 @@ const RentModal = () => {
 
     const category = watch('category');
     const location = watch('location');
+    const guestCount = watch('guestCount');
+    const roomCount = watch('roomCount');
+    const bathroomCount = watch('bathroomCount'); 
 
     const Map = useMemo(() => dynamic(() => import('../Map'), {
         ssr: false
@@ -152,8 +155,26 @@ const RentModal = () => {
                     title="Share some basics about your place"
                     subtitle="What amenties do you have?"
                 />
-                <Counter />
-
+                <Counter 
+                    title="Guests"
+                    subtitle="How many guests do you allow"
+                    value={guestCount}
+                    onChange={(value) => setCustomValue('guestCount', value)}
+                />
+                <hr />
+                <Counter 
+                    title="Guests"
+                    subtitle="How many guests do you allow"
+                    value={roomCount}
+                    onChange={(value) => setCustomValue('roomCount', value)}
+                />
+                <hr />
+                <Counter 
+                    title="Guests"
+                    subtitle="How many guests do you allow"
+                    value={bathroomCount}
+                    onChange={(value) => setCustomValue('bathroomCount', value)}
+                />    
             </div>
         )
     }
